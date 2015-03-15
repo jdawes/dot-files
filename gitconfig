@@ -1,0 +1,107 @@
+[core]
+    editor = vim
+    excludesfile = ~/.gitignore
+    pager = less
+[credential]
+    helper = osxkeychain
+[alias]
+    amend = commit --amend
+    ci    = commit
+    co    = checkout
+    sno   = show --name-only
+    dno   = diff --name-only
+
+    graph = log \
+            --date=local \
+            --graph \
+            --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n%C(white)%w(110,10,10)%s%C(reset) %C(bold yellow)- %an %n%C(red)%b%C(reset)' --abbrev-commit 
+
+    graphall = log \
+            --date=local \
+            --graph \
+            --all \
+            --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n%C(white)%w(110,10,10)%s%C(reset) %C(bold yellow)- %an %n%C(red)%b%C(reset)' --abbrev-commit 
+
+#The placeholders are:
+#?    %H: commit hash
+#x    %h: abbreviated commit hash
+#?    %T: tree hash
+#?    %t: abbreviated tree hash
+#?    %P: parent hashes
+#?    %p: abbreviated parent hashes
+#?    %an: author name
+#?    %aN: author name (respecting .mailmap, see git-shortlog(1) or git-blame(1))
+#?    %ae: author email
+#?    %aE: author email (respecting .mailmap, see git-shortlog(1) or git-blame(1))
+#?    %ad: author date (format respects --date= option)
+#x    %aD: author date, RFC2822 style
+#x    %ar: author date, relative
+#?    %at: author date, UNIX timestamp
+#?    %ai: author date, ISO 8601 format
+#?    %cn: committer name
+#?    %cN: committer name (respecting .mailmap, see git-shortlog(1) or git-blame(1))
+#?    %ce: committer email
+#?    %cE: committer email (respecting .mailmap, see git-shortlog(1) or git-blame(1))
+#?    %cd: committer date
+#?    %cD: committer date, RFC2822 style
+#?    %cr: committer date, relative
+#?    %ct: committer date, UNIX timestamp
+#?    %ci: committer date, ISO 8601 format
+#x    %d: ref names, like the --decorate option of git-log(1)
+#?    %e: encoding
+#?    %s: subject
+#?    %f: sanitized subject line, suitable for a filename
+#?    %b: body
+#?    %N: commit notes
+#?    %gD: reflog selector, e.g., refs/stash@{1}
+#?    %gd: shortened reflog selector, e.g., stash@{1}
+#?    %gs: reflog subject
+#?    %Cred: switch color to red
+#?    %Cgreen: switch color to green
+#?    %Cblue: switch color to blue
+#?    %Creset: reset color
+#?    %C(...): color specification, as described in color.branch.* config option
+#?    %m: left, right or boundary mark
+#x    %n: newline
+#?    %%: a raw %
+#?    %x00: print a byte from a hex code
+#?    %w([<w>[,<i1>[,<i2>]]]): switch line wrapping, like the -w option of git-shortlog(1).
+
+    master = checkout master
+    svnrebase = svn rebase  --localtime
+    svnfetch  = svn fetch   --localtime
+    svncommit = svn dcommit --localtime
+
+[blame]
+    date = short
+# Don't turn on "no-show-number" as this is not SVN!
+#no-show-number
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+    conflictstyle = diff3
+[instaweb]
+    local = true
+    httpd = webrick
+[color]
+    diff    = auto
+    status  = auto
+    branch  = auto
+[push]
+    default = simple
+[pull]
+    rebase = true
+[user]
+	email = jeffmcnd@siaras.com
+	name = Jeffrey McNally-Dawes
+[alias]
+    smoketest = review -t smoketest
+    recent = for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(authorname) %(refname:short)'
+	d = difftool
+[github]
+	user = jdawes
+[difftool]
+	prompt = false
+[gitreview]
+	username = jeffmcnd
