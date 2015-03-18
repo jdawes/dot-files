@@ -307,7 +307,7 @@ prompt_f ()
 ps1_fullpath="\
 ${color_none}\
 ${ps1_user_color}\\u@\\h\
-${ps1_path_color}:\\W\
+${ps1_path_color}:\\w\
 ${ps1_git_color}\$(__git_ps1)"
     PS1="${ps1_status}${ps1_fullpath} $ps1_path_color\$ ${color_none}"
 }
