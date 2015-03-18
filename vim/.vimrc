@@ -27,7 +27,7 @@ set expandtab
 set hlsearch
 set incsearch
 set ignorecase
-set number
+set ruler
 set shiftwidth=4
 set smartindent
 set tabstop=4
