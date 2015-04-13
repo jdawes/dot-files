@@ -2,25 +2,20 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+set rtp+=~/.vim/bundle/vundle.vim
+call vundle#rc()
 
-Plugin 'gmark/Vundle.vim'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'vim-scripts/vcscommand.vim'
-Plugin '0rca/vim-mikrotik'
-Plugin 'vim-scripts/showmarks--Politz'
-Plugin 'mattn/gist-vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'tpope/vim-fugitive'
-Plugin 'kien/ctrlp.vim'
+Plugin 'gmarik/vundle'
 Plugin 'altercation/vim-colors-solarized'
-
-call vundle#end()            " required
+Plugin 'kien/ctrlp.vim'
+Plugin 'mattn/gist-vim'
+Plugin 'vim-scripts/vcscommand.vim'
 
 filetype plugin indent on    " required
+
 syntax enable
+
+let mapleader = ","
 
 set autoread
 set expandtab
@@ -34,12 +29,19 @@ set tabstop=4
 
 set colorcolumn=80
 let &colorcolumn=join(range(81,999),",")
-" highlight ColorColumn guibg=#2c2d27
-" highlight LineNr ctermfg=grey
-
-let g:solarized_visibility="high"
-let g:solarized_contrast="high"
-let g:solarized_termcolors=256
 
 set background=dark
+let g:solarized_termcolors=256
 colorscheme solarized
+
+" --------------------
+"  VCS (plugin)
+" --------------------
+let g:VCSCommandDeleteOnHide=1
+map <leader>cd :VCSDiff<CR>
+map <leader>cl :VCSLog<CR>
+map <leader>ca :VCSAnnotate<CR>
+map <leader>cv :VCSVimDiff<CR>
+" -------------------
+"  END VCS (plugin)
+" --------------------
