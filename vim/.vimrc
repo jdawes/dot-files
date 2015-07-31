@@ -2,14 +2,17 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/vundle.vim
+set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 Plugin 'gmarik/vundle'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/ctrlp.vim'
+Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
 Plugin 'vim-scripts/vcscommand.vim'
+Plugin 'stephpy/vim-yaml'
+Plugin 'plasticboy/vim-markdown'
 
 filetype plugin indent on    " required
 
@@ -33,6 +36,9 @@ let &colorcolumn=join(range(81,999),",")
 set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
+
+" Disable markdown folding
+let g:vim_markdown_folding_disabled=1
 
 " --------------------
 "  VCS (plugin)
