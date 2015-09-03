@@ -1,3 +1,11 @@
-bash git/setup.sh
-bash vim/setup.sh
-bash tmux/setup.sh
+pushd git
+bash setup.sh
+popd
+
+pushd vim
+bash setup.sh
+popd
+
+pushd tmux
+bash setup.sh
+popd
