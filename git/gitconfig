@@ -100,8 +100,8 @@
 	email = jeffmcnallydawes@gmail.com
 	name = Jeffrey McNally-Dawes
 [github]
-	user = jdawes
+	user = jeffmcnd
 [difftool]
 	prompt = false
 [gitreview]
-	username = jdawes
+	username = jeffmcnd
