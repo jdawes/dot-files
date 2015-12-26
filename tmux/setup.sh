@@ -1,4 +1,5 @@
 #!/bin/bash
+curdir=`pwd`
 
-ln -s tmux.conf ~/.tmux.conf
+ln -s "${curdir}/tmux.conf" ~/.tmux.conf
 tmux source-file tmux.conf
