@@ -8,11 +8,6 @@ call vundle#rc()
 Plugin 'gmarik/vundle'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/ctrlp.vim'
-Plugin 'mattn/webapi-vim'
-Plugin 'mattn/gist-vim'
-Plugin 'vim-scripts/vcscommand.vim'
-Plugin 'stephpy/vim-yaml'
-Plugin 'plasticboy/vim-markdown'
 
 filetype plugin indent on    " required
 
