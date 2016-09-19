@@ -7,6 +7,7 @@ curdir=`pwd`
 
 # Symlink vimrc to correct location
 ln -s "${curdir}/vimrc" ~/.vimrc
+ln -s "${curdir}/colors" ~/.vim/things
 
 # Install Vundle and plugins
-vim +PluginInstall +qall
+ vim +PluginInstall +qall
