@@ -8,7 +8,7 @@
     amend = commit --amend
     ci    = commit
     co    = checkout
-	d = difftool
+    d     = difftool
     dno   = diff --name-only
     sno   = show --name-only
 
@@ -81,9 +81,9 @@
 # Don't turn on "no-show-number" as this is not SVN!
 #no-show-number
 [diff]
-	tool = vimdiff
+    tool = vimdiff
 [merge]
-	tool = vimdiff
+    tool = vimdiff
     conflictstyle = diff3
 [instaweb]
     local = true
@@ -97,11 +97,11 @@
 [pull]
     rebase = true
 [user]
-	email = jeffmcnallydawes@gmail.com
-	name = Jeffrey McNally-Dawes
+    email = jeffmcnallydawes@gmail.com
+    name = Jeffrey McNally-Dawes
 [github]
-	user = jeffmcnd
+    user = jeffmcnd
 [difftool]
-	prompt = false
+    prompt = false
 [gitreview]
-	username = jeffmcnd
+    username = jeffmcnd
