@@ -18,7 +18,7 @@ Plugin 'leafgarland/typescript-vim'
 filetype plugin indent on    " required
 
 syntax enable
-colorscheme happy_hacking
+colorscheme quantum
 
 let mapleader = ","
 let python_highlight_all=1
@@ -41,6 +41,9 @@ autocmd FileType js setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType json setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType typescript setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType cs setlocal tabstop=4 shiftwidth=4 softtabstop=4
+autocmd FileType java setlocal tabstop=4 shiftwidth=4 softtabstop=4
+autocmd FileType xml setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 set colorcolumn=80
 
