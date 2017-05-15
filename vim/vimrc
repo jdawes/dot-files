@@ -44,6 +44,7 @@ autocmd FileType typescript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType cs setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType java setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType xml setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType go setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 set colorcolumn=80
 
