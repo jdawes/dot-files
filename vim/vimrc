@@ -1,87 +1,37 @@
+""" Start Vundle
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
 
-Plugin 'gmarik/vundle'
-Plugin 'kien/ctrlp.vim'
-Plugin 'vim-scripts/indentpython.vim'
-Bundle 'Valloric/YouCompleteMe'
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'nvie/vim-flake8'
-Plugin 'leafgarland/typescript-vim'
 
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
 filetype plugin indent on    " required
 
-syntax enable
-colorscheme quantum
+""" End Vundle
 
-let mapleader = ","
-let python_highlight_all=1
+colorscheme delek
 
-set autoread
-set autoindent
+syntax on
+
+set encoding=utf-8
 set expandtab
 set hlsearch
-set incsearch
 set ignorecase
-set ruler
+set incsearch
 set number
-set dir=$HOME/.vim/swaps//
+set ruler
+set shiftwidth=4
+set showmatch
+set smartcase
+set tabstop=4
 
-autocmd FileType py setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=79
-autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
-autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
-autocmd FileType css setlocal tabstop=2 shiftwidth=2 softtabstop=2
-autocmd FileType js setlocal tabstop=2 shiftwidth=2 softtabstop=2
-autocmd FileType json setlocal tabstop=2 shiftwidth=2 softtabstop=2
-autocmd FileType yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2
-autocmd FileType typescript setlocal tabstop=2 shiftwidth=2 softtabstop=2
-autocmd FileType cs setlocal tabstop=4 shiftwidth=4 softtabstop=4
-autocmd FileType java setlocal tabstop=4 shiftwidth=4 softtabstop=4
-autocmd FileType xml setlocal tabstop=2 shiftwidth=2 softtabstop=2
-autocmd FileType go setlocal tabstop=2 shiftwidth=2 softtabstop=2
-
-set colorcolumn=80
-
-vnoremap // y/<C-R>"<CR>
-
-" --------------------
-"  VCS (plugin)
-" --------------------
-let g:VCSCommandDeleteOnHide=1
-map <leader>cd :VCSDiff<CR>
-map <leader>cl :VCSLog<CR>
-map <leader>ca :VCSAnnotate<CR>
-map <leader>cv :VCSVimDiff<CR>
-" -------------------
-"  END VCS (plugin)
-" --------------------
-"
-" --------------------
-"  YouCompleteMe (plugin)
-" --------------------
-let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
-let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
-let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
-let g:ycm_complete_in_comments = 1 " Completion in comments
-let g:ycm_complete_in_strings = 1 " Completion in string
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-" --------------------
-"  END YouCompleteMe (plugin)
-" --------------------
-
-" --------------------
-"  CtrlP (plugin)
-" --------------------
-let g:ctrlp_custom_ignore = {
-  \ 'dir': '\v[\/]\.(git)$|venv$|node_modules$|bower_components$'
-  \ }
-" --------------------
-"  END CtrlP (plugin)
-" --------------------
+map <leader><space> :let @/=''<cr> " clear search
