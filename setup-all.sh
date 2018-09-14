@@ -9,3 +9,7 @@ popd
 pushd tmux
 bash setup.sh
 popd
+
+pushd zsh
+bash setup.sh
+popd

@@ -1,0 +1,58 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
+ZSH_THEME="agnoster"
+
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+HIST_STAMPS="yyyy-mm-dd"
+HYPHEN_INSENSITIVE="true"
+
+plugins=(
+  colorize
+  cp
+  git
+  svn
+)
+
+PATH=/usr/local/bin:$PATH
+
+export PATH
+
+export EDITOR='vim'
+export MAVEN_OPTS="-Xms256m -Xmx512m"
+export SVN_EDITOR='vim'
+
+prompt_dir() {
+        prompt_segment blue black "${PWD##*/}"
+}
+
+prompt_svn() {
+        local rev branch
+        if in_svn; then
+                rev=$(svn_get_rev_nr)
+                branch=$(svn_get_branch_name)
+                if [ `svn_dirty_choose_pwd 1 0` -eq 1 ]; then
+                        prompt_segment yellow black
+                        echo -n "$rev@$branch"
+                        echo -n "±"
+                else
+                        prompt_segment green black
+                        echo -n "$rev@$branch"
+                fi
+        fi
+}
+
+build_prompt() {
+        RETVAL=$?
+        prompt_status
+        prompt_context
+        prompt_dir
+        prompt_git
+        prompt_svn
+        prompt_end
+}
+
+source $ZSH/oh-my-zsh.sh
